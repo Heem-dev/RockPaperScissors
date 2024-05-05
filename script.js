@@ -1,4 +1,5 @@
-console.log("Hello World");
+let userScore = 0;
+let computerScore = 0;
 
 // a function for the computer to return a random choice
 function getComputerChoice() {
@@ -17,5 +18,13 @@ function getComputerChoice() {
 
 function getUserChoice() {
   let userChoice = prompt("What's your choice? Rock, Paper, or Scissors");
+  userChoice = userChoice.toLowerCase();
   console.log(userChoice);
+  // calling play function after getting user choice
+  playRound(undefined, userChoice);
+}
+
+function playRound(AiChoice, userChoice) {
+  AiChoice = getComputerChoice();
+  console.log(AiChoice + userChoice);
 }
