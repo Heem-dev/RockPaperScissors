@@ -1,6 +1,6 @@
 let userScore = 0;
 let computerScore = 0;
-
+let choices = ["rock", "paper", "scissors"];
 // a function for the computer to return a random choice
 function getComputerChoice() {
   // get random number between 1 and 3
@@ -17,14 +17,37 @@ function getComputerChoice() {
 }
 
 function getUserChoice() {
-  let userChoice = prompt("What's your choice? Rock, Paper, or Scissors");
-  userChoice = userChoice.toLowerCase();
-  console.log(userChoice);
-  // calling play function after getting user choice
-  playRound(undefined, userChoice);
+  return prompt("What's your choice? Rock, Paper, or Scissors");
 }
 
 function playRound(AiChoice, userChoice) {
   AiChoice = getComputerChoice();
-  console.log(AiChoice + userChoice);
+  AiChoice = AiChoice.toLowerCase();
+  userChoice = getUserChoice();
+  userChoice = userChoice.toLowerCase();
+  console.log(userChoice);
+  console.log(AiChoice + " VS " + userChoice);
+
+  if (!choices.includes(userChoice)) {
+    console.log("invalid choice");
+    return;
+  }
+  if (userChoice == AiChoice) {
+    console.log("It's a draw!");
+  } else {
+    for (let i = 0; i <= choices.length; i++) {
+      const choice = array[i];
+    }
+  }
 }
+
+function playGame() {
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+  playRound();
+}
+
+// playGame();
+console.log(choices);
