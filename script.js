@@ -31,14 +31,30 @@ function playRound(AiChoice, userChoice) {
   if (!choices.includes(userChoice)) {
     console.log("invalid choice");
     return;
-  }
-  if (userChoice == AiChoice) {
-    console.log("It's a draw!");
+  } else if (AiChoice === userChoice) {
+    console.log("It's a tie");
+  } else if (AiChoice === "rock" && userChoice === "scissors") {
+    console.log("Computer wins");
+    computerScore++;
+  } else if (AiChoice === "rock" && userChoice === "paper") {
+    console.log("User wins");
+    userScore++;
+  } else if (AiChoice === "paper" && userChoice === "rock") {
+    console.log("Computer wins");
+    computerScore++;
+  } else if (AiChoice === "paper" && userChoice === "scissors") {
+    console.log("User wins");
+    userScore++;
+  } else if (AiChoice === "scissors" && userChoice === "rock") {
+    console.log("User wins");
+    userScore++;
+  } else if (AiChoice === "scissors" && userChoice === "paper") {
+    console.log("Computer wins");
+    computerScore++;
   } else {
-    for (let i = 0; i <= choices.length; i++) {
-      const choice = array[i];
-    }
+    console.log("Invalid choice");
   }
+  console.log("Computer: " + computerScore + " User: " + userScore);
 }
 
 function playGame() {
@@ -49,5 +65,4 @@ function playGame() {
   playRound();
 }
 
-// playGame();
-console.log(choices);
+playGame();
