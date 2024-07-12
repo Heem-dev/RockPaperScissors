@@ -40,19 +40,19 @@ function playRound(AiChoice, userChoice) {
     console.log("invalid choice");
     return;
   } else if (AiChoice === userChoice) {
-    winnerText.textContent = "It's a tie";
+    winnerText.textContent = "Computer Picked: " + AiChoice + ". It's a tie";
   } else if (AiChoice === "rock" && userChoice === "scissors") {
-    computerPlus();
+    computerPlus(AiChoice);
   } else if (AiChoice === "rock" && userChoice === "paper") {
-    playerPlus();
+    playerPlus(AiChoice);
   } else if (AiChoice === "paper" && userChoice === "rock") {
-    computerPlus();
+    computerPlus(AiChoice);
   } else if (AiChoice === "paper" && userChoice === "scissors") {
-    playerPlus();
+    playerPlus(AiChoice);
   } else if (AiChoice === "scissors" && userChoice === "rock") {
-    playerPlus();
+    playerPlus(AiChoice);
   } else if (AiChoice === "scissors" && userChoice === "paper") {
-    computerPlus();
+    computerPlus(AiChoice);
   } else {
     winnerText.textContent = "Invalid choice";
   }
@@ -67,13 +67,13 @@ function playRound(AiChoice, userChoice) {
   }
 }
 
-function computerPlus() {
+function computerPlus(choice) {
   computerScore++;
-  winnerText.textContent = "Computer wins";
+  winnerText.textContent = "Computer Picked: " + choice + ". Computer wins";
   computerScoreElem.textContent = computerScore;
 }
-function playerPlus() {
+function playerPlus(aiChoice) {
   userScore++;
-  winnerText.textContent = "Player wins";
+  winnerText.textContent = "Computer Picked: " + aiChoice + ". Player wins";
   userScoreElem.textContent = userScore;
 }
