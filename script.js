@@ -65,4 +65,4 @@ function playGame() {
   playRound();
 }
 
-playGame();
+// playGame();
